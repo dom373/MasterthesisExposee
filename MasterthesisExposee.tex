@@ -1,0 +1,122 @@
+% font and document settings
+\documentclass[12pt]{article}
+\usepackage{a4wide}
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+% language package
+\usepackage[english,ngerman]{babel}
+
+% margins and line spacings
+\usepackage[a4paper,left=2.5 cm,right=2.5 cm,top=2.5 cm,bottom=3 cm]{geometry}
+\usepackage{setspace}
+\onehalfspacing
+\setlength{\parindent}{0pt}
+\setlength{\headheight}{18pt}
+\setlength{\parskip}{5pt plus 2pt minus 1pt}
+
+% footnote
+\usepackage[bottom,hang]{footmisc}
+
+% headline
+\usepackage[headsepline,automark]{scrlayer-scrpage} 
+\setlength{\headsep}{15mm}
+\clearpairofpagestyles 
+\ihead{\headmark}
+\ohead{\pagemark}
+\addtolength{\topmargin}{1\baselineskip}
+
+% additional packages
+\usepackage{a4wide}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{color}
+\usepackage{enumitem}
+\usepackage{graphicx}
+\usepackage{epstopdf}
+\usepackage{listings}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{subfig}
+\usepackage{url}
+\usepackage{wrapfig}
+
+% configure hyperlinks
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black,
+    linktoc=all
+}
+
+% configure enumerations
+\setlist[enumerate]{itemsep=0mm}
+
+% bibtex
+\usepackage[babel]{csquotes}
+\bibliographystyle{IEEEtran}
+
+% metainformation
+\title{ExposeeMasterarbeit}
+\author{Dominic Zillner}
+\date{February 2020}
+
+% document
+\begin{document}
+
+% define page numbers
+\pagenumbering{gobble}
+
+\input{Title}
+
+%\input{Affirmation}
+%\newpage
+
+%\input{Abstract}
+%\newpage
+
+% start counting page numbers with roman numbers for tables of ...
+\pagenumbering{roman}
+\ihead{}
+
+\tableofcontents
+\newpage
+
+%\input{Abbreviations}
+%\newpage
+
+%\listoffigures
+%\newpage
+
+%\listoftables
+%\newpage
+
+%Listings
+%\lstlistoflistings
+%\newpage
+
+% set counting page numbers to arabic numbers for text and start with 1
+\setcounter{page}{1}
+\pagenumbering{arabic}
+
+\include{Introduction}
+\newpage
+
+\include{ResearchQuestionGoals}
+\newpage
+
+\include{Methodology}
+\newpage
+
+\include{Structur}
+\newpage
+
+%\include{Conclusion}
+%\newpage
+
+\ihead{Literatur}
+\bibliography{Bibliography}
+\end{document} 
